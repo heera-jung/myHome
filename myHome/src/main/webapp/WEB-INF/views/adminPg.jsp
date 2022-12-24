@@ -299,16 +299,7 @@ img:hover {
 
 </head>
 <body>
-	<c:choose>
-		<c:when test="%{#session.user==null}">
-			<button onclick="location.href='login'" >login</button>
-		</c:when>
-		<c:otherwise>
-			<button onclick="location.href='myInfo'" >MyInfo</button>
-			<button id="logout">Logout</button>
-		</c:otherwise>
-	</c:choose>
-	
+	<button type="button" id="adminBt" >admin</button>	
 	<h1>M Y &nbsp; H O M E</h1>
 
 	<div id="first">
