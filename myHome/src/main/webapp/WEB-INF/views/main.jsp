@@ -304,6 +304,7 @@ img:hover {
 			<button onclick="location.href='login'" >login</button>
 		</c:when>
 		<c:otherwise>
+			<button onclick="location.href='login'" >login</button>
 			<button onclick="location.href='myInfo'" >MyInfo</button>
 			<button id="logout">Logout</button>
 		</c:otherwise>

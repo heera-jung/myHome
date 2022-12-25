@@ -23,4 +23,19 @@ public class LoginController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "/checkLogin", method = RequestMethod.GET)
+	public String checkLogin() {
+		
+		//ログイン情報チェック
+		
+		
+		
+		//sessionにログインユーザー情報設定
+		
+		
+		
+		
+		return "main";
+	}
+	
 }
