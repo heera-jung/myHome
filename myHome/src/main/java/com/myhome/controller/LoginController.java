@@ -1,13 +1,15 @@
 package com.myhome.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.myhome.dto.MemberDto;
+import com.myhome.service.MemberService;
 
 /**
  * LoginController 
@@ -16,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class LoginController {
-		
+	
+	MemberService memberService;
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String index() {
 		
@@ -24,18 +28,22 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/checkLogin", method = RequestMethod.GET)
-	public String checkLogin() {
+	public ModelAndView checkLogin(@ModelAttribute MemberDto dto, HttpSession session) {
+		String name = memberService.loginCheck(dto, session);  
+		 ModelAndView mav = new ModelAndView();
+		  if (name != null) { // 로그인 성공 시
+			  mav.setViewName("home"); // 뷰의 이름
+		  }else { // 로그인 실패 시
+			  mav.setViewName("member/login"); 		
+			  mav.addObject("message", "error");
+		  }
+		     return mav;
+		 }
 		
 		//ログイン情報チェック
 		
 		
 		
 		//sessionにログインユーザー情報設定
-		
-		
-		
-		
-		return "main";
-	}
 	
 }

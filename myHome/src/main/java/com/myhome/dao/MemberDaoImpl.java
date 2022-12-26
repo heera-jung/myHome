@@ -7,11 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.myhome.dto.MemberDto;
 
-@Repository // 현재 클래스를 dao bean으로 등록
+@Repository //現在クラスをDAO　beanに登録 
 public class MemberDaoImpl implements MemberDao {
 
 @Inject
-SqlSession sqlSession; // SqlSession 의존관계 주입
+SqlSession sqlSession;
 
 @Override
 public String loginCheck(MemberDto dto) {
