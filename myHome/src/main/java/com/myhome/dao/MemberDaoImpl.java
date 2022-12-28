@@ -2,7 +2,6 @@ package com.myhome.dao;
 
 import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
-
 import org.springframework.stereotype.Repository;
 
 import com.myhome.dto.MemberDto;
@@ -15,6 +14,6 @@ SqlSession sqlSession;
 
 @Override
 public String loginCheck(MemberDto dto) {
-return sqlSession.selectOne("member.login_check", dto);
+	return sqlSession.selectOne("memberMapper.login_check", dto);
  }
 }

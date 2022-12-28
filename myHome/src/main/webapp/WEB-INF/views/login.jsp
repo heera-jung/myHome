@@ -147,7 +147,7 @@ td{
 				});
 	    	});
 
-    		$("#login-btn").click(function(){
+    		$("#login-btn22").click(function(){
      	             var idtext = document.getElementById("inputId");  //id
     	             var pwtext = document.getElementById("inputPw"); //pw
     	              var id = idtext.value;
@@ -170,9 +170,12 @@ td{
     						  }
     					  }
     				});
-
-    	             
     		 });
+  
+    		//login button action
+    		$("#login-btn").click(function(){
+    			$('#loginForm').submit();
+		 	});
 
      });
 
@@ -186,16 +189,16 @@ td{
 <div id="second">
 	<div class="box">
  	<h2>L&nbsp;O&nbsp;G&nbsp;I&nbsp;N</h2>
-    <form action="/loginUser"  method="post" name="data" id="f">
+    <form action="/checkLogin"  name="loginForm" id="loginForm">
 	    <table>
 	        <tr>
 	            <td>
-	            	<div class="input-box"><input type="text" placeholder="ID" id="inputId"></div>
+	            	<div class="input-box"><input type="text" placeholder="ID" name="userid" id="userid"></div>
 	            </td>
 	        </tr>
 			<tr>
 	            <td>
-	            	<div class="input-box"><input type="text" placeholder="PASSWORD" id="inputPw"></div>
+	            	<div class="input-box"><input type="text" placeholder="PASSWORD" name="passwd" id="passwd"></div>
 	            </td>
 	        </tr>
 
